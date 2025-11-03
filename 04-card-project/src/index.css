@@ -1,0 +1,153 @@
+/* This is the CSS you provided, with the alignment fix integrated.
+
+  The main change is in the ".bottom" section. I've added a 
+  ".salary-details" class to group the price and location.
+  
+  Your HTML for the bottom section should look like this:
+
+  <div class="bottom">
+    
+    <!-- This new div groups the price and location -->
+    <div class="salary-details">
+      <h3>$120/hr</h3>
+      <p>Mumbai, India</p>
+    </div>
+    
+    <!-- Your "Apply Now" button -->
+    <button>Apply Now</button>
+
+  </div>
+*/
+
+.parent {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  /* Added for better centering on the page */
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  height: 330px;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Added a subtle shadow */
+}
+.card .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.top img{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  padding: 2px;
+  object-fit: contain; /* Ensures logo fits well */
+}
+.top button {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  gap: 3px;
+  background-color: gray;
+  color: black;
+  cursor: pointer; /* Added cursor */
+}
+.center h3 {
+  font-size: 17px;
+  font-weight: 500;
+}
+.center h3 span {
+  font-size: 9px;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+.center h2 {
+  font-size: 20px;
+  color: #111; /* Added color */
+  margin-top: 4px; /* Added margin */
+}
+.center .tag {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+.center .tag h4 {
+  font-size: 12px;
+  background-color: #f3f4f6; /* Light gray */
+  color: #374151; /* Darker text */
+  font-weight: 500; /* Medium weight */
+  padding: 3px 8px; /* Adjusted padding */
+  border-radius: 4px; /* Rounded corners for tags */
+}
+
+/* --- ALIGNMENT FIX IS HERE --- */
+.bottom {
+  display: flex;
+  /* THIS IS THE FIX:
+    Changed from 'center' to 'baseline'.
+    This aligns the text inside the button with the
+    text baseline of the price (the h3).
+  */
+  align-items: baseline; 
+  /* This pushes them to opposite ends */
+  justify-content: space-between; 
+  border-top: 1px solid #eee; /* Lightened border */
+  padding-top: 15px;
+}
+
+/* This new class groups the price and location */
+.salary-details {
+  display: flex;
+  flex-direction: column; /* Stacks price on top of location */
+}
+
+/* Removed ".bottom h3" and replaced with this */
+.salary-details h3 {
+  font-size: 17px;
+  font-weight: 600; /* Bolder */
+  color: #111;
+}
+
+/* Removed ".bottom p" and replaced with this */
+.salary-details p {
+  font-size: 10px;
+  color: #8b8b8b;
+}
+
+.bottom button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 14px; /* Slightly smaller */
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9fafb; /* Lighter background */
+  color: #111; /* Dark text */
+  border: 1px solid #d1d5db; /* Added border */
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.bottom button:hover {
+  border-color: #646cff;
+  background-color: #f0f1ff; /* Light purple on hover */
+}
+.bottom button:focus,
+.bottom button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
