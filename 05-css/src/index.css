@@ -1,0 +1,16 @@
+/*  
+  index.css is a global css. Whatever we write it applies to
+  all other places.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue';
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
